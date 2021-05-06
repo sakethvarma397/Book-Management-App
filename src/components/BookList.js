@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Book from "./Book";
+import BooksContext from "../hooks/BooksContext";
 
-const BookList = ({ books, setBooks }) => {
+const BookList = () => {
+  const { books, setBooks } = useContext(BooksContext);
   const handleRemoveBook = (id) => {
     setBooks(books.filter((book) => book.id !== id));
   };
